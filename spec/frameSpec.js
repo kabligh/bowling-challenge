@@ -5,7 +5,8 @@ describe("Frame", function() {
   beforeEach(function(){
     frame = new Frame();
   });
-  it('has a score of zero', function() {
-    expect(frame.score()).toEqual(0);
+
+  it('has a starting score of zero', function() {
+    expect(frame.getScore()).toEqual(0);
   });
 });

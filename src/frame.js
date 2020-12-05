@@ -1,7 +1,12 @@
 'use strict';
 
 class Frame{
-  score() {
-    return 0;
+
+  constructor() {
+    this.score = 0
+  }
+
+  getScore() {
+    return this.score;
   };
 };
