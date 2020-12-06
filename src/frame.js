@@ -3,8 +3,9 @@
 class Frame{
 
   constructor() {
-    this.score = 0
-    this._rolls = []
+    this.STARTING_PINS = 10;
+    this.score = 0;
+    this._rolls = [];
   }
 
   getScore() {
@@ -16,7 +17,14 @@ class Frame{
   };
 
   knock(pins) {
+    if (this.isMaximumPins()) {
+      throw Error('Max pins is 10');
+    }
     this._rolls.push(pins);
     this.score += pins;
   };
+
+  isMaximumPins() {
+    return this.score === this.STARTING_PINS;
+  }
 };

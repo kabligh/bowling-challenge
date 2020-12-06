@@ -19,6 +19,11 @@ describe("Frame", function() {
     expect(frame.rolls()).toEqual([10]);
   });
 
+  it('does not let the user knock more than 10 pins', function() {
+    frame.knock(10);
+    expect(function(){ frame.knock(1); } ).toThrow(new Error('Max pins is 10'));
+  })
+
   it('adds the pins knocked over to the score', function() {
     frame.knock(10);
     expect(frame.getScore()).toEqual(10);
